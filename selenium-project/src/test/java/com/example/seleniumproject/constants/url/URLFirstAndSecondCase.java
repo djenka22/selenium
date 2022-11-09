@@ -1,6 +1,6 @@
-package com.example.seleniumproject.constants;
+package com.example.seleniumproject.constants.url;
 
-public interface URL {
+public interface URLFirstAndSecondCase {
     public static final String LOGIN_PAGE = "https://www.saucedemo.com/";
     public static final String INVENTORY_PAGE = "https://www.saucedemo.com/inventory.html";
     public static final String SAUCE_LABS_BACKPACK_PAGE = "https://www.saucedemo.com/inventory-item.html?id=4";

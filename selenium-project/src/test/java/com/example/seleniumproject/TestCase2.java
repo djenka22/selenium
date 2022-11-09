@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
-import static com.example.seleniumproject.constants.URL.*;
+import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.*;
 import static org.testng.Assert.assertEquals;
 
 
