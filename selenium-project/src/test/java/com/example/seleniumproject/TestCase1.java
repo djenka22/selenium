@@ -21,7 +21,7 @@ public class TestCase1 {
       service.setUp(browser);
    }
 
-   @AfterTest
+   @AfterClass
    public void tearDown() {
        service.tearDown();
    }

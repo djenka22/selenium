@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import static com.example.seleniumproject.constants.LoginPageLocators.*;
+import static com.example.seleniumproject.constants.firstandseconcase.LoginPageLocators.*;
+import static com.example.seleniumproject.constants.polovniautomobili.URLPolovniAutomobili.REGISTRACIJA_PAGE;
 import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.INVENTORY_PAGE;
 import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.LOGIN_PAGE;
 import static com.example.seleniumproject.methods.MainMethods.*;
@@ -44,7 +45,7 @@ public class LoginPage implements Pageable {
 
     public LoginPage clickOnLoginButton() {
         click(LOGIN_BUTTON_LOCATOR, driver);
-        Assert.assertEquals(driver.getCurrentUrl(), INVENTORY_PAGE);
+        Assert.assertTrue(isCurrentUrl(driver, INVENTORY_PAGE));
         return this;
     }
 

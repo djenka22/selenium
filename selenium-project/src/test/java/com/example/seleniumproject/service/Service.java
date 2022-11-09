@@ -7,7 +7,7 @@ import com.example.seleniumproject.execute.main.SOVerifyElementIsPresent;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 
-import static com.example.seleniumproject.constants.InventoryPageLocators.*;
+import static com.example.seleniumproject.constants.firstandseconcase.InventoryPageLocators.*;
 
 @Slf4j
 public class Service {

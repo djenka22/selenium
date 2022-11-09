@@ -6,9 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 
 
-import static com.example.seleniumproject.constants.LoginPageLocators.*;
-import static com.example.seleniumproject.constants.StandardUser.PASSWORD;
-import static com.example.seleniumproject.constants.StandardUser.USERNAME;
+import static com.example.seleniumproject.constants.firstandseconcase.LoginPageLocators.*;
+import static com.example.seleniumproject.constants.firstandseconcase.StandardUser.PASSWORD;
+import static com.example.seleniumproject.constants.firstandseconcase.StandardUser.USERNAME;
 
 @Slf4j
 public class SOLogin {

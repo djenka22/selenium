@@ -1,4 +1,4 @@
-package com.example.seleniumproject.constants;
+package com.example.seleniumproject.constants.firstandseconcase;
 
 public interface StandardUser {
     public static final String USERNAME = "standard_user";

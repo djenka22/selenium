@@ -1,4 +1,4 @@
-package com.example.seleniumproject.constants;
+package com.example.seleniumproject.constants.firstandseconcase;
 
 import org.openqa.selenium.By;
 

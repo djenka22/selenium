@@ -4,7 +4,7 @@ package com.example.seleniumproject.execute.firstcase.special;
 import com.example.seleniumproject.pages.InventoryPage;
 import org.openqa.selenium.WebDriver;
 
-import static com.example.seleniumproject.constants.InventoryPageLocators.BURGER_MENU_LOCATOR;
+import static com.example.seleniumproject.constants.firstandseconcase.InventoryPageLocators.BURGER_MENU_LOCATOR;
 
 public class SOVerifyLogoutIsPresent {
     private String pageURL;
