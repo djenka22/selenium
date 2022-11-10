@@ -5,5 +5,6 @@ public interface URLPolovniAutomobili {
     public static final String LOGIN_PAGE = "https://www.polovniautomobili.com/login";
     public static final String REGISTRACIJA_PAGE = "https://www.polovniautomobili.com/registracija";
     public static final String USPESNA_REGISTRACIJA_PAGE = "https://www.polovniautomobili.com/uspesna-registracija";
+    public static final String REGISTRACIJA_USPESNA_PAGE = "https://www.polovniautomobili.com/registracija-uspesna";
 
 }

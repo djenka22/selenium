@@ -1,10 +1,12 @@
 package com.example.seleniumproject.pages;
 
+import com.example.seleniumproject.pages.saucedemo.InventoryPage;
+import com.example.seleniumproject.pages.saucedemo.LoginPage;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 
-import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.INVENTORY_PAGE;
-import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.LOGIN_PAGE;
+import static com.example.seleniumproject.constants.firstandseconcase.URLFirstAndSecondCase.INVENTORY_PAGE;
+import static com.example.seleniumproject.constants.firstandseconcase.URLFirstAndSecondCase.LOGIN_PAGE;
 @Slf4j
 public class PageFactory {
     public static Pageable createPage(String identity, WebDriver driver) {

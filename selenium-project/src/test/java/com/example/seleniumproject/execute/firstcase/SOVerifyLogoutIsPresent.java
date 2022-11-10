@@ -1,7 +1,7 @@
-package com.example.seleniumproject.execute.firstcase.special;
+package com.example.seleniumproject.execute.firstcase;
 
 
-import com.example.seleniumproject.pages.InventoryPage;
+import com.example.seleniumproject.pages.saucedemo.InventoryPage;
 import org.openqa.selenium.WebDriver;
 
 import static com.example.seleniumproject.constants.firstandseconcase.InventoryPageLocators.BURGER_MENU_LOCATOR;

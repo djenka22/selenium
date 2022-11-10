@@ -1,4 +1,4 @@
-package com.example.seleniumproject.constants.url;
+package com.example.seleniumproject.constants.firstandseconcase;
 
 public interface URLFirstAndSecondCase {
     public static final String LOGIN_PAGE = "https://www.saucedemo.com/";

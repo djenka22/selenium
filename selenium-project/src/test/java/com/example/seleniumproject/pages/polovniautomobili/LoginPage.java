@@ -1,6 +1,6 @@
 package com.example.seleniumproject.pages.polovniautomobili;
 
-import com.example.seleniumproject.pages.Pageable;
+import com.example.seleniumproject.constants.enumconst.Assertion;
 import com.example.seleniumproject.pages.PageablePolovniAutomobili;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
@@ -8,8 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import static com.example.seleniumproject.constants.polovniautomobili.PolovniAutomobiliPageLocators.REGISTRUJ_SE_BUTTON_FIRST_LOCATOR;
-import static com.example.seleniumproject.constants.polovniautomobili.URLPolovniAutomobili.LOGIN_PAGE;
-import static com.example.seleniumproject.constants.polovniautomobili.URLPolovniAutomobili.REGISTRACIJA_PAGE;
+import static com.example.seleniumproject.constants.polovniautomobili.URLPolovniAutomobili.*;
 import static com.example.seleniumproject.methods.MainMethods.*;
 
 @Slf4j
@@ -21,9 +20,11 @@ public class LoginPage implements PageablePolovniAutomobili {
     private LoginPage(WebDriver driver) {
         this.driver = driver;
         driver.manage().window().maximize();
-        driver.get(LOGIN_PAGE);
+        if(!driver.getCurrentUrl().equals(LOGIN_PAGE)) {
+            driver.get(LOGIN_PAGE);
+        }
     }
-    public static LoginPage getInstance(WebDriver driver) {
+        public static LoginPage getInstance(WebDriver driver) {
         if (instance == null) {
             log.info("creating new instance of LoginPage");
             instance = new LoginPage(driver);
@@ -52,7 +53,7 @@ public class LoginPage implements PageablePolovniAutomobili {
     }
 
     @Override
-    public RegistracijaPage clickOnRegistrujSe() {
+    public PageablePolovniAutomobili clickOnRegistrujSe() {
         verifyElementIsPresent(REGISTRUJ_SE_BUTTON_FIRST_LOCATOR);
         click(REGISTRUJ_SE_BUTTON_FIRST_LOCATOR, driver);
         Assert.assertTrue(isCurrentUrl(driver, REGISTRACIJA_PAGE));
@@ -67,6 +68,18 @@ public class LoginPage implements PageablePolovniAutomobili {
 
     @Override
     public PageablePolovniAutomobili verifyElementIsSelected(By element) {
+        verifyElementIsPresent(element);
+        isSelected(driver, element);
+        return this;
+    }
+
+    @Override
+    public PageablePolovniAutomobili clickOnLoginButton(By locator) {
+        return null;
+    }
+
+    @Override
+    public PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
         return null;
     }
 }

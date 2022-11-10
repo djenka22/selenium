@@ -1,14 +1,16 @@
-package com.example.seleniumproject.pages;
+package com.example.seleniumproject.pages.saucedemo;
+
+import com.example.seleniumproject.constants.enumconst.Assertion;
+import com.example.seleniumproject.execute.assertion.InstanceGenerator;
+import com.example.seleniumproject.execute.assertion.MyAssert;
+import com.example.seleniumproject.pages.Pageable;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import static com.example.seleniumproject.constants.firstandseconcase.LoginPageLocators.*;
-import static com.example.seleniumproject.constants.polovniautomobili.URLPolovniAutomobili.REGISTRACIJA_PAGE;
-import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.INVENTORY_PAGE;
-import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.LOGIN_PAGE;
+import static com.example.seleniumproject.constants.firstandseconcase.URLFirstAndSecondCase.LOGIN_PAGE;
 import static com.example.seleniumproject.methods.MainMethods.*;
 
 @Slf4j
@@ -43,10 +45,16 @@ public class LoginPage implements Pageable {
         return this;
     }
 
-    public LoginPage clickOnLoginButton() {
+    /*public LoginPage clickOnLoginButton() {
         click(LOGIN_BUTTON_LOCATOR, driver);
         Assert.assertTrue(isCurrentUrl(driver, INVENTORY_PAGE));
         return this;
+    }*/
+    public LoginPage justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
+        verifyElementIsPresent(elementToClick);
+        click(elementToClick, driver);
+        MyAssert.handle(assertType, toAssert, driver);
+        return (LoginPage) InstanceGenerator.returnInstance(pageToReturn, driver);
     }
 
 

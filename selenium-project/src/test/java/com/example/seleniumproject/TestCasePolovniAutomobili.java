@@ -27,4 +27,8 @@ public class TestCasePolovniAutomobili {
     public void registerAccountOnPolovniAutomobili() {
         service.registerAccountOnPolovniAutomobili();
     }
+    @Test(priority = 2)
+    public void verifyRegistrationOnProtonMe() {
+        service.verifyRegistrationOnProtonMe();
+    }
 }

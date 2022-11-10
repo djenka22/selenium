@@ -1,5 +1,6 @@
 package com.example.seleniumproject.pages;
 
+import com.example.seleniumproject.constants.enumconst.Assertion;
 import com.example.seleniumproject.pages.polovniautomobili.LoginPage;
 import com.example.seleniumproject.pages.polovniautomobili.RegistracijaPage;
 import org.openqa.selenium.By;
@@ -11,4 +12,6 @@ public interface PageablePolovniAutomobili {
     public abstract PageablePolovniAutomobili clickOnRegistrujSe();
     public abstract PageablePolovniAutomobili clickOnCheckBox(By locator);
     public abstract PageablePolovniAutomobili verifyElementIsSelected(By element);
+    public abstract PageablePolovniAutomobili clickOnLoginButton(By locator);
+    public abstract PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn);
 }

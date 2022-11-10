@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.*;
 
 import static com.example.seleniumproject.constants.MyBrowser.CHROME;
-import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.*;
+import static com.example.seleniumproject.constants.firstandseconcase.URLFirstAndSecondCase.*;
 
 
 

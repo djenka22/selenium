@@ -1,13 +1,13 @@
-package com.example.seleniumproject.pages;
+package com.example.seleniumproject.pages.saucedemo;
 
+import com.example.seleniumproject.pages.Pageable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import static com.example.seleniumproject.constants.firstandseconcase.InventoryPageLocators.*;
-import static com.example.seleniumproject.constants.polovniautomobili.URLPolovniAutomobili.REGISTRACIJA_PAGE;
-import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.INVENTORY_PAGE;
-import static com.example.seleniumproject.constants.url.URLFirstAndSecondCase.LOGIN_PAGE;
+import static com.example.seleniumproject.constants.firstandseconcase.URLFirstAndSecondCase.INVENTORY_PAGE;
+import static com.example.seleniumproject.constants.firstandseconcase.URLFirstAndSecondCase.LOGIN_PAGE;
 import static com.example.seleniumproject.methods.MainMethods.*;
 
 public class InventoryPage implements Pageable {

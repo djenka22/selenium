@@ -1,15 +1,12 @@
 package com.example.seleniumproject.pages.polovniautomobili;
 
-import com.example.seleniumproject.pages.Pageable;
+import com.example.seleniumproject.constants.enumconst.Assertion;
 import com.example.seleniumproject.pages.PageablePolovniAutomobili;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import java.util.Arrays;
-
-import static com.example.seleniumproject.constants.polovniautomobili.PolovniAutomobiliPageLocators.POSTAVI_OGLAS_BUTTON_LOCATOR;
 import static com.example.seleniumproject.constants.polovniautomobili.PolovniAutomobiliPageLocators.REGISTRUJ_SE_BUTTON_SECOND_LOCATOR;
 import static com.example.seleniumproject.constants.polovniautomobili.URLPolovniAutomobili.*;
 import static com.example.seleniumproject.methods.MainMethods.*;
@@ -23,7 +20,9 @@ public class RegistracijaPage implements PageablePolovniAutomobili {
     private RegistracijaPage(WebDriver driver) {
         this.driver = driver;
         driver.manage().window().maximize();
-        driver.get(REGISTRACIJA_PAGE);
+        if(!driver.getCurrentUrl().equals(REGISTRACIJA_PAGE)) {
+            driver.get(REGISTRACIJA_PAGE);
+        }
     }
     public static RegistracijaPage getInstance(WebDriver driver) {
         if (instance == null) {
@@ -61,6 +60,16 @@ public class RegistracijaPage implements PageablePolovniAutomobili {
         verifyElementIsPresent(element);
         isSelected(driver, element);
         return this;
+    }
+
+    @Override
+    public PageablePolovniAutomobili clickOnLoginButton(By locator) {
+        return null;
+    }
+
+    @Override
+    public PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
+        return null;
     }
 
     @Override

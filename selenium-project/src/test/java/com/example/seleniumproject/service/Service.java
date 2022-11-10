@@ -1,7 +1,7 @@
 package com.example.seleniumproject.service;
 
-import com.example.seleniumproject.execute.firstcase.special.SOVerifyLogoutIsPresent;
-import com.example.seleniumproject.execute.firstcase.special.SOLogin;
+import com.example.seleniumproject.execute.firstcase.SOVerifyLogoutIsPresent;
+import com.example.seleniumproject.execute.firstcase.SOLogin;
 import com.example.seleniumproject.execute.main.SOSetUp;
 import com.example.seleniumproject.execute.main.SOVerifyElementIsPresent;
 import lombok.extern.slf4j.Slf4j;

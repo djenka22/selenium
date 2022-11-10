@@ -3,6 +3,7 @@ package com.example.seleniumproject.methods;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +13,7 @@ import java.time.Duration;
 import static com.example.seleniumproject.constants.MyBrowser.CHROME;
 @Slf4j
 public class MainMethods {
-    private static final long WAIT_DURATION = 10;
+    private static final Duration WAIT_DURATION = Duration.ofSeconds(20);
     public static WebDriver setUpDriver(String browser) {
         if (browser.equals(CHROME)) {
             System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
@@ -22,7 +23,7 @@ public class MainMethods {
     }
     public static void waitForElementToBeVisible(WebDriver driver, By locator) {
         log.info("waiting for {} element to be visible", locator);
-        WebDriverWait waitDriver = new WebDriverWait(driver, Duration.ofSeconds(WAIT_DURATION));
+        WebDriverWait waitDriver = new WebDriverWait(driver, WAIT_DURATION);
         waitDriver.until(ExpectedConditions.visibilityOfElementLocated(locator));
         log.info("element {} is visible", locator);
     }
@@ -36,10 +37,15 @@ public class MainMethods {
         log.info("click on {} element", locator);
     }
     public static boolean isCurrentUrl(WebDriver driver, String URL) {
-        return driver.getCurrentUrl().equals(URL);
+        WebDriverWait waitDriver = new WebDriverWait(driver, WAIT_DURATION);
+        return waitDriver.until(ExpectedConditions.urlToBe(URL));
     }
     public static boolean isSelected(WebDriver driver, By locator) {
         return driver.findElement(locator).isSelected();
+    }
+
+    public static void switchTab(WebDriver driver, String URL) {
+        driver.switchTo().newWindow(WindowType.TAB).get(URL);
     }
 
 }
