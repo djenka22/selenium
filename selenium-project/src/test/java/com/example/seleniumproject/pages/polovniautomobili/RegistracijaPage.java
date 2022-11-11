@@ -35,7 +35,7 @@ public class RegistracijaPage implements PageablePolovniAutomobili {
 
     @Override
     public PageablePolovniAutomobili verifyElementIsSelected(By element, WebDriver driver) {
-        PageablePolovniAutomobili.super.verifyElementIsPresent(element, driver);
+        waitForElementToBeVisible(driver, element);
         SpecificMethods.isLabelSelected(driver, element);
         return this;
     }

@@ -28,6 +28,6 @@ public class SORegisterOnPolovniAutomobili {
                 .handleClick(RADIO_BUTTON_THIRD_LOCATOR, Assertion.ASSERT_ELEMENT_SELECTED, RADIO_BUTTON_THIRD_LOCATOR, RegistracijaPage.class, driver)
                 .verifyElementIsSelected(EMAIL_POTVRDA_LOCATOR, driver)
                 .handleClick(REGISTRUJ_SE_BUTTON_SECOND_LOCATOR, Assertion.ASSERT_URL, USPESNA_REGISTRACIJA_PAGE, RegistracijaPage.class, driver)
-                .verifyElementIsPresent(HVALA_NA_REGISTRACIJI_LOCATOR, driver);
+                .verifyElementIsVisible(HVALA_NA_REGISTRACIJI_LOCATOR, driver);
     }
 }

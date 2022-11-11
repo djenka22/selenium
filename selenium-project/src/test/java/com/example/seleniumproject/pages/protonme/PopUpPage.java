@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import static com.example.seleniumproject.constants.protonme.URLProtonMe.MESSAGE_PAGE;
 import static com.example.seleniumproject.methods.MainMethods.click;
+import static com.example.seleniumproject.methods.MainMethods.waitForElementToBeVisible;
 
 @Slf4j
 public class PopUpPage implements PageablePolovniAutomobili {
@@ -35,7 +36,7 @@ public class PopUpPage implements PageablePolovniAutomobili {
 
     @Override
     public PageablePolovniAutomobili handleClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn, WebDriver driver) {
-        verifyElementIsPresent(elementToClick, driver);
+        waitForElementToBeVisible(driver, elementToClick);
         click(elementToClick, driver);
         ArrayList<String> windows = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(windows.get(TAB_INDEX));

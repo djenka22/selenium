@@ -3,6 +3,7 @@ package com.example.seleniumproject.service;
 import com.example.seleniumproject.execute.main.SOSetUp;
 import com.example.seleniumproject.execute.thirdcase.SOCreateUserAccountOnPolovniAutomobili;
 import com.example.seleniumproject.execute.thirdcase.SORegisterOnPolovniAutomobili;
+import com.example.seleniumproject.execute.thirdcase.SOSignInOnPolovniAutomobili;
 import com.example.seleniumproject.execute.thirdcase.SOVerifyRegistrationOnProtonMe;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
@@ -33,5 +34,10 @@ public class ServicePolovniAutomobili {
     public void createUserAccountOnPolovniAutomobili() {
         SOCreateUserAccountOnPolovniAutomobili soCreate = new SOCreateUserAccountOnPolovniAutomobili();
         soCreate.execute(driver);
+    }
+
+    public void signInOnPolovniAutomobili() {
+        SOSignInOnPolovniAutomobili soSignIn = new SOSignInOnPolovniAutomobili();
+        soSignIn.execute(driver);
     }
 }

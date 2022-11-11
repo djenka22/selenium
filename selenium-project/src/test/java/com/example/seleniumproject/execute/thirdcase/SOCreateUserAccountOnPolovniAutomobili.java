@@ -24,7 +24,7 @@ public class SOCreateUserAccountOnPolovniAutomobili {
                 .handleClick(REGION_LOCATOR, Assertion.ASSERT_ELEMENT_VISIBLE, REGION_CONFIRM_LOCATOR, KorisnickiProfilPage.class, driver)
                 .sendKeyToElement(ZIP_CODE, ZIP_CODE_LOCATOR, driver)
                 .sendKeyToElement(BROJ_TELEFONA, PHONE_LOCATOR, driver)
-                .verifyElementIsPresent(STATE_LOCATOR, driver)
+                .verifyElementIsVisible(STATE_LOCATOR, driver)
                 .handleClick(SAVE_BUTTON_LOCATOR, Assertion.ASSERT_ELEMENT_VISIBLE, SUCCESS_ALERT, KorisnickiProfilPage.class, driver)
                 .hoverOverElement(MY_PROFILE_LOCATOR, Assertion.ASSERT_ELEMENT_VISIBLE, ODJAVI_SE_LOCATOR, KorisnickiProfilPage.class, driver)
                 .handleClick(ODJAVI_SE_LOCATOR, Assertion.ASSERT_ELEMENT_VISIBLE, PRIJAVI_SE_LOCATOR, KorisnickiProfilPage.class, driver);

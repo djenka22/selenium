@@ -35,4 +35,8 @@ public class TestCasePolovniAutomobili {
     public void createUserAccountOnPolovniAutomobili() {
         service.createUserAccountOnPolovniAutomobili();
     }
+    @Test(priority = 4)
+    public void signInOnPolovniAutomobili() {
+        service.signInOnPolovniAutomobili();
+    }
 }

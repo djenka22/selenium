@@ -2,6 +2,8 @@ package com.example.seleniumproject.constants.polovniautomobili;
 
 import org.openqa.selenium.By;
 
+import static com.example.seleniumproject.constants.polovniautomobili.StandardUser.EMAIL_VERIFY;
+
 public interface PolovniAutomobiliPageLocators {
     By POSTAVI_OGLAS_BUTTON_LOCATOR = By.xpath("//a[@data-label='Postavi oglas']");
     By REGISTRUJ_SE_BUTTON_FIRST_LOCATOR = By.xpath("//a[normalize-space()='Registruj se']");
@@ -28,4 +30,11 @@ public interface PolovniAutomobiliPageLocators {
     By MY_PROFILE_LOCATOR = By.xpath("//div[@class='uk-float-left']");
     By ODJAVI_SE_LOCATOR = By.xpath("//ul[@class='uk-nav uk-nav-dropdown']//a[@title='Odjavite se iz sistema'][normalize-space()='Odjavi se']");
     By PRIJAVI_SE_LOCATOR = By.xpath("//a[@data-label='MP - Prijavi se']");
+    By PRIJAVI_SE_AFTER_HOVER_LOCATOR = By.xpath("//a[@title='Prijavi se']");
+    By UNESI_EMAIL_LOCATOR = By.xpath("//input[@id='username_header']");
+    By DALJE_BUTTON_LOCATOR = By.xpath("//button[@id='next-step']");
+    By UNESI_LOZINKU_LOCATOR = By.xpath("//input[@id='password_header']");
+    By PRIJAVI_SE_BUTTON_LOCATOR = By.xpath("//button[normalize-space()='Prijavi se']");
+    By VERIFY_EMAIL_IS_CORRECT_AFTER_SIGN_IN = By.xpath("//span[contains(@class, 'ym-hide-content') and text()=" + "'" + EMAIL_VERIFY + "']");
+    //span[contains(@class, 'ym-hide-content') and text()=" + "'" + EMAIL_VERIFY + "']"
 }

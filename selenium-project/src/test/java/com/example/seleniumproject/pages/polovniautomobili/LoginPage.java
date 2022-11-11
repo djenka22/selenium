@@ -18,9 +18,9 @@ public class LoginPage implements PageablePolovniAutomobili {
     private LoginPage(WebDriver driver) {
         this.driver = driver;
         driver.manage().window().maximize();
-        if(!driver.getCurrentUrl().equals(LOGIN_PAGE)) {
+        /*if(!driver.getCurrentUrl().equals(LOGIN_PAGE)) {
             driver.get(LOGIN_PAGE);
-        }
+        }*/
     }
         public static LoginPage getInstance(WebDriver driver) {
         if (instance == null) {
