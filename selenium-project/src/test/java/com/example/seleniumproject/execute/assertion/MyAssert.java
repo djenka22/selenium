@@ -15,8 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static com.example.seleniumproject.constants.enumconst.Assertion.ASSERT_ELEMENT_VISIBLE;
-import static com.example.seleniumproject.constants.enumconst.Assertion.ASSERT_URL;
+import static com.example.seleniumproject.constants.enumconst.Assertion.*;
 
 
 @Slf4j
@@ -29,6 +28,16 @@ public class MyAssert {
         if(type.equals(ASSERT_ELEMENT_VISIBLE)) {
             assertElementVisible(driver, toAssert);
         }
+        if(type.equals(ASSERT_ELEMENT_SELECTED)) {
+            assertElementSelected(driver, toAssert);
+        }
+    }
+
+    private static void assertElementSelected(WebDriver driver, Object toAssert) {
+        if (!(toAssert instanceof By)) {
+            throw new RuntimeException("error");
+        }
+        MainMethods.isElementSelected(driver, (By)toAssert);
     }
 
     private static void assertElementVisible(WebDriver driver, Object toAssert) {

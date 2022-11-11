@@ -40,11 +40,10 @@ public class InventoryPage implements Pageable {
         waitForElementToBeVisible(driver, LOGOUT_LOCATOR);
         return this;
     }
-    public InventoryPage clickOnLogout() {
+    public LoginPage clickOnLogout() {
         click(LOGOUT_LOCATOR, driver);
-        Assert.assertTrue(isCurrentUrl(driver, LOGIN_PAGE));
-        return this;
+        isCurrentUrl(driver, LOGIN_PAGE);
+        return LoginPage.getInstance(driver);
     }
-
 
 }

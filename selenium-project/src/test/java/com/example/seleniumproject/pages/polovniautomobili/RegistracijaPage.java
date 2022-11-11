@@ -1,6 +1,7 @@
 package com.example.seleniumproject.pages.polovniautomobili;
 
 import com.example.seleniumproject.constants.enumconst.Assertion;
+import com.example.seleniumproject.methods.SpecificMethods;
 import com.example.seleniumproject.pages.PageablePolovniAutomobili;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
@@ -33,56 +34,9 @@ public class RegistracijaPage implements PageablePolovniAutomobili {
     }
 
     @Override
-    public PageablePolovniAutomobili verifyElementIsPresent(By element) {
-        log.info("waiting for {} element to be visible", element);
-        waitForElementToBeVisible(driver, element);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili sendKeyToElement(String key, By element) {
-        verifyElementIsPresent(element);
-        sendKeyToElementMethod(key, element, driver);
-        Assert.assertEquals(driver.findElement(element).getAttribute("value"), key);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnCheckBox(By locator) {
-        verifyElementIsPresent(locator);
-        click(locator, driver);
-        Assert.assertTrue(isSelected(driver, locator));
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili verifyElementIsSelected(By element) {
-        verifyElementIsPresent(element);
-        isSelected(driver, element);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnLoginButton(By locator) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnPostaviOglasButton() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnRegistrujSe() {
-        verifyElementIsPresent(REGISTRUJ_SE_BUTTON_SECOND_LOCATOR);
-        click(REGISTRUJ_SE_BUTTON_SECOND_LOCATOR, driver);
-        Assert.assertTrue(isCurrentUrl(driver, USPESNA_REGISTRACIJA_PAGE));
-        log.info("click on Registruj se on page {} leads to {} URL",REGISTRACIJA_PAGE, USPESNA_REGISTRACIJA_PAGE);
+    public PageablePolovniAutomobili verifyElementIsSelected(By element, WebDriver driver) {
+        PageablePolovniAutomobili.super.verifyElementIsPresent(element, driver);
+        SpecificMethods.isLabelSelected(driver, element);
         return this;
     }
 }

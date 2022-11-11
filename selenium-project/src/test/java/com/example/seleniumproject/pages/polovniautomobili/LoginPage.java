@@ -15,8 +15,6 @@ import static com.example.seleniumproject.methods.MainMethods.*;
 public class LoginPage implements PageablePolovniAutomobili {
     WebDriver driver;
     private static LoginPage instance;
-
-
     private LoginPage(WebDriver driver) {
         this.driver = driver;
         driver.manage().window().maximize();
@@ -32,54 +30,4 @@ public class LoginPage implements PageablePolovniAutomobili {
         return instance;
     }
 
-    @Override
-    public PageablePolovniAutomobili verifyElementIsPresent(By element) {
-        log.info("waiting for {} element to be visible", element);
-        waitForElementToBeVisible(driver, element);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili sendKeyToElement(String key, By element) {
-        verifyElementIsPresent(element);
-        sendKeyToElementMethod(key, element, driver);
-        Assert.assertEquals(driver.findElement(element).getAttribute("value"), key);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnPostaviOglasButton() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnRegistrujSe() {
-        verifyElementIsPresent(REGISTRUJ_SE_BUTTON_FIRST_LOCATOR);
-        click(REGISTRUJ_SE_BUTTON_FIRST_LOCATOR, driver);
-        Assert.assertTrue(isCurrentUrl(driver, REGISTRACIJA_PAGE));
-        log.info("click on Postavi Oglas leads to {} URL", REGISTRACIJA_PAGE);
-        return RegistracijaPage.getInstance(driver);
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnCheckBox(By locator) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili verifyElementIsSelected(By element) {
-        verifyElementIsPresent(element);
-        isSelected(driver, element);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnLoginButton(By locator) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
-        return null;
-    }
 }

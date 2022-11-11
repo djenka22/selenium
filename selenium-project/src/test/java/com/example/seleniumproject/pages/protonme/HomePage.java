@@ -1,5 +1,6 @@
 package com.example.seleniumproject.pages.protonme;
 
+
 import com.example.seleniumproject.constants.enumconst.Assertion;
 import com.example.seleniumproject.pages.PageablePolovniAutomobili;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import static com.example.seleniumproject.constants.protonme.ProtonMePageLocators.SIGH_IN_BUTTON_LOCATOR;
 import static com.example.seleniumproject.constants.protonme.URLProtonMe.HOME_PAGE;
 import static com.example.seleniumproject.constants.protonme.URLProtonMe.LOGIN_PAGE;
 import static com.example.seleniumproject.methods.MainMethods.*;
@@ -16,8 +18,6 @@ import static com.example.seleniumproject.methods.MainMethods.*;
 public class HomePage implements PageablePolovniAutomobili {
     WebDriver driver;
     private static HomePage instance;
-
-
     private HomePage(WebDriver driver) {
         this.driver = driver;
         driver.manage().window().maximize();
@@ -32,50 +32,5 @@ public class HomePage implements PageablePolovniAutomobili {
         }
         return instance;
     }
-    @Override
-    public PageablePolovniAutomobili verifyElementIsPresent(By element) {
-        log.info("waiting for {} element to be visible", element);
-        waitForElementToBeVisible(driver, element);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili sendKeyToElement(String key, By element) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnLoginButton(By locator) {
-        verifyElementIsPresent(locator);
-        click(locator, driver);
-        Assert.assertTrue(isCurrentUrl(driver, LOGIN_PAGE));
-        return LoginPage.getInstance(driver);
-    }
-
-    @Override
-    public PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnPostaviOglasButton() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnRegistrujSe() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnCheckBox(By locator) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili verifyElementIsSelected(By element) {
-        return null;
-    }
-
 
 }

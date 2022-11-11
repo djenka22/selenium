@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.lang.reflect.Method;
 
-public class InstanceGenerator<T> {
+public class InstanceGenerator {
     public static String METHOD_NAME = "getInstance";
     public static Object returnInstance(Class pageToReturn, WebDriver driver) {
         try {

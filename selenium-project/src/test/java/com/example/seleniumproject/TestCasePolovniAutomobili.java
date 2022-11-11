@@ -31,4 +31,8 @@ public class TestCasePolovniAutomobili {
     public void verifyRegistrationOnProtonMe() {
         service.verifyRegistrationOnProtonMe();
     }
+    @Test(priority = 3)
+    public void createUserAccountOnPolovniAutomobili() {
+        service.createUserAccountOnPolovniAutomobili();
+    }
 }

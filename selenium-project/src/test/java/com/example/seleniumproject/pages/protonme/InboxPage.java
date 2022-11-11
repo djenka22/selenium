@@ -30,49 +30,4 @@ public class InboxPage implements PageablePolovniAutomobili {
         return instance;
     }
 
-    @Override
-    public PageablePolovniAutomobili verifyElementIsPresent(By element) {
-        log.info("waiting for {} element to be visible", element);
-        waitForElementToBeVisible(driver, element);
-        return this;
-    }
-    @Override
-    public PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
-        verifyElementIsPresent(elementToClick);
-        click(elementToClick, driver);
-        MyAssert.handle(assertType, toAssert, driver);
-        return (PageablePolovniAutomobili) InstanceGenerator.returnInstance(pageToReturn, driver);
-    }
-
-    @Override
-    public PageablePolovniAutomobili sendKeyToElement(String key, By element) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnPostaviOglasButton() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnRegistrujSe() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnCheckBox(By locator) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili verifyElementIsSelected(By element) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnLoginButton(By locator) {
-        return null;
-    }
-
-
 }

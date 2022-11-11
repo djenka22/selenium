@@ -28,50 +28,5 @@ public class UspesnaRegistracijaPage implements PageablePolovniAutomobili {
         }
         return instance;
     }
-    @Override
-    public PageablePolovniAutomobili verifyElementIsPresent(By element) {
-        log.info("waiting for {} element to be visible", element);
-        waitForElementToBeVisible(driver, element);
-        return this;
-    }
 
-    @Override
-    public PageablePolovniAutomobili sendKeyToElement(String key, By element) {
-        verifyElementIsPresent(element);
-        sendKeyToElementMethod(key, element, driver);
-        Assert.assertEquals(driver.findElement(element).getAttribute("value"), key);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnPostaviOglasButton() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnRegistrujSe() {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnCheckBox(By locator) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili verifyElementIsSelected(By element) {
-        verifyElementIsPresent(element);
-        isSelected(driver, element);
-        return this;
-    }
-
-    @Override
-    public PageablePolovniAutomobili clickOnLoginButton(By locator) {
-        return null;
-    }
-
-    @Override
-    public PageablePolovniAutomobili justClick(By elementToClick, Assertion assertType, Object toAssert, Class pageToReturn) {
-        return null;
-    }
 }
