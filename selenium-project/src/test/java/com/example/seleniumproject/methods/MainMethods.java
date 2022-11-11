@@ -3,9 +3,11 @@ package com.example.seleniumproject.methods;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -75,6 +77,11 @@ public class MainMethods {
     public static void switchToDefaultContent(WebDriver driver) {
         log.info("switching to default content");
         driver.switchTo().defaultContent();
+    }
+    public static void hoverOverElement(WebDriver driver, By locator) {
+        WebElement element = driver.findElement(locator);
+        Actions hover = new Actions(driver);
+        hover.moveToElement(element).build().perform();
     }
 
 

@@ -21,9 +21,11 @@ public interface PolovniAutomobiliPageLocators {
     By ZIP_CODE_LOCATOR = By.xpath("//input[@id='zip_code']");
     By REGION_CONFIRM_LOCATOR = By.xpath("//span[normalize-space()='Podunavski']");
     By REGION_LOCATOR = By.xpath("//div[@class='uk-width-medium-1-2 uk-width-1-1']//a[1]");
-    By REGION_CONFIRM_CONFIRM_LOCATOR = By.xpath("//span[contains(text(),'Beograd (uži)')]");
     By STATE_LOCATOR = By.xpath("//p[@title=' Srbija']");
     By PHONE_LOCATOR = By.xpath("//input[@id='cellphone']");
     By SAVE_BUTTON_LOCATOR = By.xpath("//button[@id='submit']");
     By SUCCESS_ALERT = By.xpath("//div[@class='uk-alert uk-alert-success']");
+    By MY_PROFILE_LOCATOR = By.xpath("//div[@class='uk-float-left']");
+    By ODJAVI_SE_LOCATOR = By.xpath("//ul[@class='uk-nav uk-nav-dropdown']//a[@title='Odjavite se iz sistema'][normalize-space()='Odjavi se']");
+    By PRIJAVI_SE_LOCATOR = By.xpath("//a[@data-label='MP - Prijavi se']");
 }
